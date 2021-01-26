@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from . import Proxy
+from .proxy import Proxy
 
 class Service(BaseModel):
 

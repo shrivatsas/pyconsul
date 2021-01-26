@@ -1,6 +1,6 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List
-from . import Upstream
+from .upstream import Upstream
 
 class Proxy(BaseModel):
 
@@ -8,5 +8,5 @@ class Proxy(BaseModel):
     DestinationServiceID: str
     LocalServiceAddress: str
     LocalServicePort: int
-    Config: dict
+    ProxyConfig: dict = Field(alias='Config')
     Upstreams: List[Upstream]

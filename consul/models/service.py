@@ -6,8 +6,8 @@ class Service(BaseModel):
     Kind: str
     ID: str
     Service: str
-    Tags: list
-    Meta: dict
+    Tags: list = None
+    Meta: dict = None
     Port : int
     Address : str
     TaggedAddresses: dict

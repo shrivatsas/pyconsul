@@ -1,5 +1,5 @@
 import httpx
-from models.service import Service
+from consul.models.service import Service
 
 class Agent:
 
@@ -12,8 +12,8 @@ class Agent:
         self.timeoutMillis = timeoutMillis
 
         for host in hostAndPort:
-            res = httpx.head("https://source.unsplash.com/random")
-            self.hosts["host"] = res.status_code
+            res = httpx.head(f"http://{host}")
+            self.hosts[f"{host}"] = (res.status_code == 200)
 
     def register(self, service: Service):
         print("hello")

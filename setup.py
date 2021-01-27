@@ -12,4 +12,6 @@ setup(name='pyconsul',
           'httpx==0.16.1',
           'pydantic==1.7.3'
       ],
+      setup_requires=['pytest-runner'],
+      tests_require=['pytest'],
       zip_safe=False)

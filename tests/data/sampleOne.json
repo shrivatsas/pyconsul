@@ -1,0 +1,42 @@
+{
+  "Kind": "connect-proxy",
+  "ID": "web-sidecar-proxy",
+  "Service": "web-sidecar-proxy",
+  "Tags": null,
+  "Meta": null,
+  "Port": 18080,
+  "Address": "",
+  "TaggedAddresses": {
+    "lan": {
+      "address": "127.0.0.1",
+      "port": 8000
+    },
+    "wan": {
+      "address": "198.18.0.53",
+      "port": 80
+    }
+  },
+  "Weights": {
+    "Passing": 1,
+    "Warning": 1
+  },
+  "EnableTagOverride": false,
+  "Datacenter": "dc1",
+  "ContentHash": "4ecd29c7bc647ca8",
+  "Proxy": {
+    "DestinationServiceName": "web",
+    "DestinationServiceID": "web",
+    "LocalServiceAddress": "127.0.0.1",
+    "LocalServicePort": 8080,
+    "Config": {
+      "foo": "bar"
+    },
+    "Upstreams": [
+      {
+        "DestinationType": "service",
+        "DestinationName": "db",
+        "LocalBindPort": 9191
+      }
+    ]
+  }
+}
